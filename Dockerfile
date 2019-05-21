@@ -1,10 +1,9 @@
 FROM acrtechorama2019.azurecr.io/powershell:6.1.0-ubuntu-18.04
 
-WORKDIR /app
-
 #expose the website
 EXPOSE $PORT
-
+COPY  /website /app
+WORKDIR /app
 #switch user
 #start website
 ENTRYPOINT ["pwsh", "./Start-Website.ps1" ]
